@@ -6,8 +6,21 @@ A really long story about how this project came about..
 
 
 ### Usage
-Have not figured out how to run with one command. More details later.
+Have not figured out how to run with one command. More details on that later.
 
+To start server: 
+build using maven, then
+
+```
+java -jar target/PlayHymn3-0.1.0.jar
+```
+
+To start client:
+
+```
+cd src/main/
+mvn spring run app.groovy -- --server.port=8000
+```
 
 ### Todo
 - Right now client and server both run in their own Tomcat instance. Need to create a fat jar. Can I run these both from one Tomcat?
