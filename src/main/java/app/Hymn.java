@@ -2,18 +2,16 @@ package app;
 
 public class Hymn {
 
-	private String uri;
+	
 	private String name;
 	private String lyrics;
+	private int number;
 	
-	public Hymn(String uriIn, String nameIn, String lyricsIn) {
-		uri = uriIn;
+	public Hymn(String nameIn, String lyricsIn, int numberIn) {
+
 		name = nameIn;
 		lyrics = lyricsIn;
-	}
-	
-	public String getUri() {
-		return uri;
+		number = numberIn;
 	}
 	
 	public String getName() {
@@ -22,6 +20,10 @@ public class Hymn {
 	
 	public String getLyrics() {
 		return lyrics;
+	}
+	
+	public int getNumber() {
+		return number;
 	}
 	
 }
