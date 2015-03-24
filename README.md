@@ -15,5 +15,6 @@ Have not figured out how to run with one command. More details later.
 - fix popState in jQuery
 - learn JPA or Hibernate or something else to tie hymn database
 - add <audio> to html, query aforementioned db for hymn
+- add unit tests!!!
 - how to run this on heroku
 
