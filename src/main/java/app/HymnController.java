@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class HymnController {
 	HymnsRepo repo;
 	
-	@RequestMapping( value="/{idNum}", method=RequestMethod.GET)
+	@RequestMapping(value="/{idNum}", method=RequestMethod.GET)
 	public @ResponseBody Hymn greeting(@PathVariable int idNum) {
 		return repo.getHymn(idNum);
 	}

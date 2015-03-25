@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>PlayHymns</title>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="hello.js"></script>
+
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<script
+	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8">
+				<div class="jumbotron">
+					<h1>PlayHymns!</h1>
+					<p>Use the search bar below to get started.</p>
+				</div>
+			</div>
+		</div>
+		
+		<audio controls>
+			<source src="nothing.mp3" type="audio/mpeg">
+			<source src="nothing.mp3" type="audio/ogg">
+		</audio>
+		
+		<div class="col-lg-6">
+			<div class="input-group">
+				<input id="search-keypress" type="text" class="form-control"
+					placeholder="Search for..."> <span class="input-group-btn">
+					<button id="search-click" class="btn btn-default" type="button">
+						<span class="glyphicon glyphicon-search"></span>
+					</button>
+				</span>
+			</div>
+		</div>
+
+		<br> <br>
+		<div>
+			<p id="progress">No hymn selected.</p>
+			<p>The name is:
+			<p class="hymn-name"></p>
+			</p>
+			<p>The number is:
+			<p class="hymn-number"></p>
+			</p>
+			<p>The lyrics are:
+			<p class="hymn-lyrics"></p>
+			</p>
+		</div>
+
+
+	</div>
+</body>
+</html>
