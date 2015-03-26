@@ -1,17 +1,19 @@
 package app;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.validation.constraints.NotNull; 
+//import javax.persistence.Column;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 
-@Entity
+//@Entity
 public class Hymn {
 
-	@NotNull
+//	@Column(nullable = false)
 	private String name;
-	@NotNull
+	
+//	@Column(nullable = false)
 	private String lyrics;
-	@Id
+	
+//	@Id
 	private int number;
 	
 	public Hymn(String nameIn, String lyricsIn, int numberIn) {
@@ -21,7 +23,7 @@ public class Hymn {
 	}
 
 	// for JPA
-	public Hymn() {
+	protected Hymn() {
 		
 	}
 	
