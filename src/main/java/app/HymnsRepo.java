@@ -3,9 +3,10 @@ package app;
 import java.util.HashMap;
 
 import org.springframework.stereotype.Component;
+import org.springframework.data.repository.CrudRepository;
 
 @Component
-public class HymnsRepo {
+public class HymnsRepo implements CrudRepository<Hymn, Integer> {
 
 	private HashMap<Integer, Hymn> repo;
 	
@@ -21,11 +22,6 @@ public class HymnsRepo {
 		addDefaultHymns();
 	}
 	
-//	@Bean
-//	public HymnsRepo getHymnsRepo() {
-//		return this;
-//	}
-	
 	public void addHymn(Hymn hymn) {
 		repo.put(hymn.getNumber(), hymn);
 	}
@@ -40,5 +36,71 @@ public class HymnsRepo {
 	public Hymn getHymn(int idNum) {
 		// return error!
 		return repo.get(idNum);
+	}
+
+	@Override
+	public long count() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void delete(Integer arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Hymn arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void delete(Iterable<? extends Hymn> arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void deleteAll() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public boolean exists(Integer arg0) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Iterable<Hymn> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Iterable<Hymn> findAll(Iterable<Integer> arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Hymn findOne(Integer arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Hymn> S save(S arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public <S extends Hymn> Iterable<S> save(Iterable<S> arg0) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

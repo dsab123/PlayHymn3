@@ -1,14 +1,4 @@
 $(document).ready(function() {
-//	$.ajax({
-//		url: "http://localhost:8000/"
-//	}).then(function(data, status, jqxhr) {
-//		$('.hymn-uri').append(data.uri);
-//		$('.hymn-content').append(data.name);
-//		$('.hymn-name').append(data.lyrics);
-//		$('.hymn-number').append(data.number);
-//		console.log(jqxhr);
-//	});
-
 	$("#search-keypress").keypress(function(event) {
 
 		var keycode = (event.keyCode ? event.keyCode : event.which);
@@ -43,7 +33,7 @@ $(document).ready(function() {
 	}
 
 	$(window).bind('popstate', function event() {
-		$('#progress').text("state was popped!")	
+		$('#progress').text("state was popped! IMPLEMENT")	
 	});
 
 
