@@ -23,8 +23,10 @@ Navigate to http://localhost:9000
 
 ### Todo
 - fix popState in jQuery
-- learn JPA or Hibernate or something else to tie hymn database
-- add <audio> to html, query aforementioned db for hymn
+- ~~learn JPA or Hibernate or something else to tie hymn database~~
+- ~~query aforementioned db for hymn~~
+- add audio to db
+- add <audio> to html
 - add unit tests!!!
 - handle null cases
 - add links to previous week's hymns
