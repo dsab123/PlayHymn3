@@ -26,8 +26,10 @@ Navigate to http://localhost:9000
 - ~~learn JPA or Hibernate or something else to tie hymn database~~
 - ~~query aforementioned db for hymn~~
 - add audio to db
+- switch db to postgres for use with heroku
 - add <audio> to html
 - add unit tests!!!
+- reformat html for pagination, identified by week rather than hymn
 - handle null cases
 - add links to previous week's hymns
 - how to run this on heroku
