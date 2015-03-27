@@ -1,19 +1,21 @@
 package app;
 
-//import javax.persistence.Column;
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-//@Entity
+@Entity
+@Table(name="hymn")
 public class Hymn {
 
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String name;
 	
-//	@Column(nullable = false)
+	@Column(nullable = false)
 	private String lyrics;
 	
-//	@Id
+	@Id
 	private int number;
 	
 	public Hymn(String nameIn, String lyricsIn, int numberIn) {
@@ -37,6 +39,11 @@ public class Hymn {
 	
 	public int getNumber() {
 		return number;
+	}
+	
+	@Override
+	public String toString() {
+		return number + " | " + name + " | " + lyrics;
 	}
 	
 }

@@ -1,3 +1,7 @@
+/*
+ * THIS CLASS WAS USED AS A TEMP DATABASE BEFORE SETTING UP HymnRepository
+ * */
+
 package app;
 
 import java.util.HashMap;
@@ -5,7 +9,7 @@ import java.util.HashMap;
 import org.springframework.stereotype.Component;
 //import org.springframework.data.repository.CrudRepository;
 
-@Component
+//@Component
 public class HymnsRepo {//implements CrudRepository<Hymn, Integer> {
 
 	private HashMap<Integer, Hymn> repo;

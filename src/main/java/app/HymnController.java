@@ -11,15 +11,15 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @RequestMapping("/hymn")
 public class HymnController {
-	HymnsRepo repo;
+	HymnRepository repo;
 	
 	@RequestMapping(value="/{idNum}", method=RequestMethod.GET)
-	public @ResponseBody Hymn greeting(@PathVariable int idNum) {
-		return repo.getHymn(idNum);
+	public @ResponseBody Hymn returnHymn(@PathVariable int idNum) {
+		return repo.findHymnByNumber(idNum);
 	}
 	
 	@Autowired
-	public void setHymnsRepo(HymnsRepo repoIn) {
+	public void setHymnRepository(HymnRepository repoIn) {
 		repo = repoIn;
 	}
 }
