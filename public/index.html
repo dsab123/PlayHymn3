@@ -22,10 +22,8 @@
 				<p>Use the search bar below to get started.</p>
 			</div>
 		</div>
-		<audio controls>
-			<source src="nothing.mp3" type="audio/mpeg">
-			<source src="nothing.mp3" type="audio/ogg">
-		</audio>
+
+		<!-- 
 
 		<div class="col-lg-6">
 			<div class="input-group">
@@ -50,32 +48,89 @@
 			<p>The lyrics are:
 			<p class="hymn-lyrics"></p>
 			</p>
-		</div>
-
- 
-	</div>
-	<!-- 
-	
-	<div class="container">
-		<div class="span12">
-			<nav>
-				<ul class="pagination">
-					<li><a href="#" aria-label="Previous"> <span
-							aria-hidden="true">&laquo;</span>
-					</a></li>
-					<li><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
-					<li><a href="#" aria-label="Next"> <span
-							aria-hidden="true">&raquo;</span>
-					</a></li>
-				</ul>
-			</nav>
+			<p>The audio:</p>
+			<audio controls>
+				<source src="" type="audio/mpeg">
+			</audio>
 		</div>
 	</div>
 -->
 
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button"
+				id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				Select Week <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation"><a role="menuitem" tabindex="-1"
+					class="week" href="#">3-31-2015</a></li>
+			</ul>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-2">
+				<ul class="nav nav-pills nav-stacked">
+					<li role="presentation" class="active-hymn1"><a
+						class="active-hymn1-text" href="#">Hymn 1</a></li>
+					<li role="presentation" class="active-hymn2"><a
+						class="active-hymn2-text" href="#">Hymn 2</a></li>
+					<li role="presentation" class="active-hymn3"><a
+						class="active-hymn3-text" href="#">Hymn 3</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-6">
+				<div class="row hymn-1-div" style="display: none;">
+					<div class="span4">
+						<p class="hymn-1-name"></p>
+						<p class="hymn-1-number"></p>
+						<p>The audio:</p>
+						<audio controls>
+							<source src="" type="audio/mpeg">
+						</audio>
+					</div>
+				</div>
+
+				<div class="row hymn-2-div" style="display: none;">
+					<div class="span4">
+						<p class="hymn-2-name"></p>
+						<p class="hymn-2-number"></p>
+						<p>The audio:</p>
+						<audio controls>
+							<source src="" type="audio/mpeg">
+						</audio>
+					</div>
+				</div>
+
+				<div class="row hymn-3-div" style="display: none;">
+					<div class="span4">
+						<p class="hymn-3-name"></p>
+						<p class="hymn-3-number"></p>
+						<p>The audio:</p>
+						<audio controls>
+							<source src="" type="audio/mpeg">
+						</audio>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-sm-8">
+				<div class="lyrics-row">
+					<p class="hymn-1-lyrics" style="display: none;"></p>
+					<p class="hymn-2-lyrics" style="display: none;"></p>
+					<p class="hymn-3-lyrics" style="display: none;"></p>
+				</div>
+			</div>
+		</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
