@@ -25,6 +25,7 @@ $(document).ready(function() {
 			$('.hymn-name').text(data.name);
 			$('.hymn-lyrics').text(data.lyrics);
 			$('.hymn-number').text(data.number);
+			$('.hymn-uri').attr('src', data.uri)[0];
 		});		
 	}
 
@@ -54,9 +55,22 @@ $(document).ready(function() {
 		retrieveWeek($(this).text());
 	});
 
+	/*
+	$('[class$="text"]').on("click", function() {
+		$('.nav').find(".active").removeClass("active");
+		$(this).parent().addClass("active");
+
+		retrieveHymn($(this).text());
+
+		$('.hymn-div').show();
+		$('.hymn-lyrics').show();
+	});
+	 */
+
 	$('[class^="list"]').on("click", function() {
 		var whichActive = $(this).parent().find(".active");
-		
+
+		$(this).parent().find(".active").removeClass("active");
 		$(this).addClass("active");
 
 		retrieveHymn($(this).first().text());
