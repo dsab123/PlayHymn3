@@ -14,21 +14,17 @@ $(document).ready(function() {
 		retrieveHymn(hymnNum);
 	});
 
-	function retrieveHymn(hymn, whichHymn) {
-		$('#progress').text("loading...");
-
+	function retrieveHymn(hymn) {
 		var newURI = "http://localhost:8080/hymn/"+hymn
-		$('#progress').text("loading "+newURI);
 
 		history.pushState({}, '', hymn)
 
 		$.ajax({
 			url: newURI
 		}).then(function(data, status, jqxhr) {
-			$('.hymn-'+whichHymn+'-name').text(data.name);
-			$('.hymn-'+whichHymn+'-lyrics').text(data.lyrics);
-			$('.hymn-'+whichHymn+'-number').text(data.number);
-			console.log(jqxhr);
+			$('.hymn-name').text(data.name);
+			$('.hymn-lyrics').text(data.lyrics);
+			$('.hymn-number').text(data.number);
 		});		
 	}
 
@@ -48,45 +44,32 @@ $(document).ready(function() {
 			url: newURI
 		}).then(function(data, status, jqxhr) {
 			$('.week').text(data.week);
-			$('.active-hymn1-text').text(data.hymn1);
-			$('.active-hymn2-text').text(data.hymn2);
-			$('.active-hymn3-text').text(data.hymn3);
-			console.log(jqxhr);
+			$('.hymn1-text').text(data.hymn1);
+			$('.hymn2-text').text(data.hymn2);
+			$('.hymn3-text').text(data.hymn3);
 		});
 	}
-
-	$('.active-hymn1').click(function(event) {
-		$('.hymn-1-div').slideToggle("fast");
-		$('.hymn-1-lyrics').slideToggle("fast");
-		
-		if ($('.hymn-1-div').is(':visible')) {
-			retrieveHymn($(this).text(), 1);
-		}
-	});
-	
-	$('.active-hymn2').click(function(event) {
-		$('.hymn-2-div').toggle("fast");
-		$('.hymn-2-lyrics').slideToggle("fast");
-
-		if ($('.hymn-2-div').is(':visible')) {
-			retrieveHymn($(this).text(), 2);
-		}
-	});
-	
-	$('.active-hymn3').click(function(event) {
-		$('.hymn-3-div').toggle("fast");
-		$('.hymn-3-lyrics').slideToggle("fast");
-
-		
-		if ($('.hymn-3-div').is(':visible')) {
-			retrieveHymn($(this).text(), 3);
-		}
-	});
 
 	$('.week').click(function event() {
 		retrieveWeek($(this).text());
 	});
 
+	$('[class^="list"]').on("click", function() {
+		var whichActive = $(this).parent().find(".active");
+		
+		$(this).addClass("active");
+
+		retrieveHymn($(this).first().text());
+
+		if ($(this).is(whichActive)) {
+			$('.hymn-div').fadeOut("fast");
+			$('.hymn-lyrics').fadeOut("fast");
+			$(this).removeClass("active");
+		} else {
+			$('.hymn-div').fadeIn("fast");
+			$('.hymn-lyrics').fadeIn("fast");
+		}
+	})
 
 
 });
