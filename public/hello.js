@@ -17,7 +17,7 @@ $(document).ready(function() {
 	function retrieveHymn(hymn) {
 		var newURI = "http://localhost:8080/hymn/"+hymn
 
-		history.pushState({}, '', hymn)
+		//history.pushState({}, '', hymn)
 
 		$.ajax({
 			url: newURI
@@ -25,7 +25,13 @@ $(document).ready(function() {
 			$('.hymn-name').text(data.name);
 			$('.hymn-lyrics').text(data.lyrics);
 			$('.hymn-number').text(data.number);
-			$('.hymn-uri').attr('src', data.uri)[0];
+			
+			$('.hymn-uri-mp3').attr("src", data.mp3Uri);
+			$('.hymn-uri-ogg').attr("src", data.oggUri);			
+			
+			// chalk not finding this out to my lack of html/js experience
+			var audio = $("#audioStuff");
+			audio.load();
 		});		
 	}
 

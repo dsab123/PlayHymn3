@@ -18,15 +18,20 @@ public class Hymn {
 	@Column(nullable = false)
 	private String lyrics;
 	
+	@Column(nullable = false)
+	private String mp3Uri;
 	
 	@Column(nullable = false)
-	private String uri;
+	private String oggUri;
 	
-	public Hymn(String nameIn, String lyricsIn, int numberIn, String uriIn) {
+	
+	
+	public Hymn(String nameIn, String lyricsIn, int numberIn, String mp3UriIn, String oggUriIn) {
 		name = nameIn;
 		lyrics = lyricsIn;
 		number = numberIn;
-		uri = uriIn;
+		mp3Uri = mp3UriIn;
+		oggUri = oggUriIn;
 	}
 
 	// for JPA
@@ -46,8 +51,12 @@ public class Hymn {
 		return number;
 	}
 	
-	public String getUri() {
-		return uri;
+	public String getMp3Uri() {
+		return mp3Uri;
+	}
+	
+	public String getOggUri() {
+		return oggUri;
 	}
 	
 	@Override
