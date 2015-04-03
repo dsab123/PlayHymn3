@@ -1,4 +1,6 @@
 package app;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,5 +23,11 @@ public class WeekController {
 	@Autowired
 	public void setWeekRepository(WeekRepository repoIn) {
 		repo = repoIn;
+	}
+	
+	// eh..
+	@RequestMapping(value="/all", method=RequestMethod.GET)
+	public List<Week> returnAllWeeks() {
+		return repo.findAll();
 	}
 }
