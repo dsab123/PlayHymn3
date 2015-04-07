@@ -1,26 +1,13 @@
 $(document).ready(function() {
-
 	$.ajax({
 		url: "http://localhost:8080/week/all"
 	}).then(function(data, status, jqkhr) {
-		
-		var list = $.parseJSON(data);
-		
-		$(list).each(function(index, value) {
-			// iterate over all weeks, add new <a> to <li>
-//			
-//			<li class="dropdown" role="presentation">
-//			<a role="menuitem" tabindex="-1" class="week" href="#">03-31-2015</a>
-//		</li>
-//			
-			
-			$('.dropdown').append(
-					//"<li class=\"dropdown\" role\"presentation\">" +
+
+		$(data).each(function(index, value) {
+			$('.dropdown-poop').append(
 					"<a role=\"menuitem\" tabindex=\"" + index + "\" class=\"week\" href=\"#\">" + 
 					value.date + "</a>"
-					//this.date + "</a>"
-					//		+ "</li>"
-					);	
+			);	
 		})
 	});
 
@@ -42,6 +29,7 @@ $(document).ready(function() {
 		var newURI = "http://localhost:8080/hymn/"+hymn
 
 		// for when I get pushState-like functionality working
+		// get current url, and append the hymn to it
 		//history.pushState({}, '', hymn)
 
 		$.ajax({
@@ -70,6 +58,7 @@ $(document).ready(function() {
 		var newURI = "http://localhost:8080/week/"+week
 		$('#progress').text("loading "+week);
 
+		// for when I get pushState-like functionality working
 		history.pushState({}, '', week)
 
 		$.ajax({
@@ -82,9 +71,12 @@ $(document).ready(function() {
 		});
 	}
 
-	$('.week').on("click", function event() {
-		alert("hello, text: " + $(this).text());
-		retrieveWeek($(this).text());
+	$.when( $.ajax("http://localhost:8080/week/all") ).then(function event() {
+
+			$('.week').on("click", function event() {
+				unselectHymn();
+				retrieveWeek($(this).text());
+			});
 	});
 
 	$('[class^="list"]').on("click", function() {
@@ -96,12 +88,19 @@ $(document).ready(function() {
 		retrieveHymn($(this).first().text());
 
 		if ($(this).is(whichActive)) {
-			$('.hymn-div').fadeOut("fast");
-			$('.hymn-lyrics').fadeOut("fast");
-			$(this).removeClass("active");
+//			$('.hymn-div').fadeOut("fast");
+//			$('.hymn-lyrics').fadeOut("fast");
+//			$(this).removeClass("active");
+			unselectHymn();
 		} else {
 			$('.hymn-div').fadeIn("fast");
 			$('.hymn-lyrics').fadeIn("fast");
 		}
 	})
+	
+	function unselectHymn() {
+		$('.active').removeClass('active');
+		$('.hymn-div').fadeOut("fast");
+		$('.hymn-lyrics').fadeOut("fast");
+	}
 });
