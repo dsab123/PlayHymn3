@@ -23,7 +23,7 @@ public class Application {
 		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
 		connector.setScheme("http");
 		connector.setPort(Integer.parseInt(System.getenv("PORT")));
-		connector.setPort(9000);
+		//connector.setPort(9000);
 		return connector;
 	}
 	
