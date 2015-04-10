@@ -1,7 +1,4 @@
-$(document).ready(function() {
-	
-	alert(location.host);
-	
+$(document).ready(function() {	
 	$.ajax({
 		url: "http://localhost:8080/week/all"
 	}).then(function(data, status, jqkhr) {
