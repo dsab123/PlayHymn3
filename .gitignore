@@ -1,1 +1,9 @@
 target/
+.classpath
+.project
+.settings/
+.springBeans
+public/hymnsFS/
+public/test.mp3
+public/test.ogg
+
