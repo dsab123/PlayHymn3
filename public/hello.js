@@ -1,4 +1,6 @@
 $(document).ready(function() {	
+	alert("name: "+window.location.host)
+
 	$.ajax({
 		url: window.location.host+"/week/all"
 	}).then(function(data, status, jqkhr) {
