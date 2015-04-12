@@ -1,6 +1,6 @@
 $(document).ready(function() {	
 	$.ajax({
-		url: "http://localhost:8080/week/all"
+		url: window.location+"week/all"
 	}).then(function(data, status, jqkhr) {
 
 		$(data).each(function(index, value) {
@@ -26,7 +26,7 @@ $(document).ready(function() {
 	});
 
 	function retrieveHymn(hymn) {
-		var newURI = "http://localhost:8080/hymn/"+hymn
+		var newURI = window.location+"/hymn/"+hymn
 
 		// for when I get pushState-like functionality working
 		// get current url, and append the hymn to it
@@ -55,11 +55,11 @@ $(document).ready(function() {
 	function retrieveWeek(week) {
 		$('#progress').text("loading...");
 
-		var newURI = "http://localhost:8080/week/"+week
+		var newURI = window.location+"/week/"+week
 		$('#progress').text("loading "+week);
 
 		// for when I get pushState-like functionality working
-		history.pushState({}, '', week)
+		//history.pushState({}, '', week)
 
 		$.ajax({
 			url: newURI
@@ -71,7 +71,7 @@ $(document).ready(function() {
 		});
 	}
 
-	$.when( $.ajax("http://localhost:8080/week/all") ).then(function event() {
+	$.when( $.ajax(window.location+"week/all") ).then(function event() {
 
 			$('.week').on("click", function event() {
 				unselectHymn();
