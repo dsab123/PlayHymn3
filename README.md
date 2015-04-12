@@ -28,7 +28,22 @@ java -jar target/PlayHymn3-0.1.0.jar
 Navigate to http://localhost:9000
 
 ### About
-Fill this in later.
+Disclaimer: I'm just getting my feet wet with Spring and jQuery, and this is my first web projects.
+
+There's a Spring Boot example that shows how to build a RESTful resource (https://spring.io/guides/gs/actuator-service/) that is pretty straightforward. It accepts GET requests and returns a JSON object.
+
+There's also another one that shows how to host static content (https://spring.io/blog/2013/12/19/serving-static-web-content-with-spring-boot).
+
+I figured it would be easy to bind the two examples together, throw in an SQL database for the backend to serve responses from, deploy on heroku, and voila!
+
+However, I've kind of hit a brick wall.
+
+I'm not sure how to get heroku to allow me to use CORS. I am given a port to bind to from heroku's config vars, but I don't know how to reach the other end.
+
+For the sake of finishing the project, I'll just bind the port to the backend, and navigating to <name>.herokuapp.com/index.html will expose the frontend.
+
+Next try will involve a more mature framework like Ruby On Rails, possibly.
+
 
 ### Todo
 - deploy on heroku
