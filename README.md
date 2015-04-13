@@ -2,6 +2,7 @@
 ## A (very) simple service to stream hymns played by me
 
 ### Changelog
+- 4/12/2015 finally got something through the pipeline!
 - 3/25/2015 Added simple bootstrap to index.html
 - 3/25/2015 Added second http connector to Tomcat to serve the html, so no more running two Tomcat instances! ^__^
 
@@ -46,12 +47,13 @@ Next try will involve a more mature framework like Ruby On Rails, possibly.
 
 
 ### Todo
-- deploy on heroku
+- host files on s3
+- ~~deploy on heroku
 - fix popState in jQuery
 - ~~learn JPA or Hibernate or something else to tie hymn database~~
 - ~~query aforementioned db for hymn~~
 - ~~add audio to db~~
-- switch db to postgres for easy use with heroku
+- ~~switch db to postgres for easy use with heroku
 - ~~add <audio> to html~~
 - add unit tests!!!
 - ~~reformat html for pagination, identified by week rather than hymn~~
