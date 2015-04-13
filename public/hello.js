@@ -58,14 +58,15 @@ $(document).ready(function() {
 		});
 	}
 
-	$.when( $.ajax("https://"+window.location.host+"/week/all") ).then(function event() {
+	//$.when( $.ajax("https://"+window.location.host+"/week/all") ).then(function event() {
+	$('.dropdown-poop').on('click', '.week', function() {	
 		alert("this is: "+$(this).text());
 	
-		$('.week').on("click", function event() {
+		//$('.week').on("click", function event() {
 			unselectHymn();
 			alert("this is: "+$(this).text());
 			retrieveWeek($(this).text());
-		});
+		//});
 	});
 	
 
