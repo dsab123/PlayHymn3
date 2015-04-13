@@ -1,12 +1,8 @@
-$(document).ready(function() {	
-	alert("name: "+window.location.host)
+$(document).ready(function() {
 
 	$.ajax({
 		url: "http://"+window.location.host+"/week/all"
 	}).then(function(data, status, jqkhr) {
-
-	alert("name: "+url)
-
 
 		$(data).each(function(index, value) {
 			$('.dropdown-poop').append(
@@ -14,20 +10,6 @@ $(document).ready(function() {
 					value.date + "</a>"
 			);	
 		})
-	});
-
-	$('#search-keypress').keypress(function(event) {
-		var keycode = (event.keyCode ? event.keyCode : event.which);
-		if (keycode == '13') {
-			var hymnNum = $(this).val();
-			retrieveHymn(hymnNum);
-		}
-
-	});
-
-	$('#search-click').click(function(event) {
-		var hymnNum = $('#search-keypress').val();
-		retrieveHymn(hymnNum);
 	});
 
 	function retrieveHymn(hymn) {
@@ -77,14 +59,15 @@ $(document).ready(function() {
 	}
 
 	$.when( $.ajax("http://"+window.location.host+"/week/all") ).then(function event() {
-				alert("this is: "+$(this).text());
-
-			$('.week').on("click", function event() {
-				unselectHymn();
-				alert("this is: "+$(this).text());
-				retrieveWeek($(this).text());
-			});
+		alert("this is: "+$(this).text());
+	
+		$('.week').on("click", function event() {
+			unselectHymn();
+			alert("this is: "+$(this).text());
+			retrieveWeek($(this).text());
+		});
 	});
+	
 
 	$('[class^="list"]').on("click", function() {
 		var whichActive = $(this).parent().find(".active");
@@ -110,4 +93,19 @@ $(document).ready(function() {
 		$('.hymn-div').fadeOut("fast");
 		$('.hymn-lyrics').fadeOut("fast");
 	}
+	
+	
+//	$('#search-keypress').keypress(function(event) {
+//		var keycode = (event.keyCode ? event.keyCode : event.which);
+//		if (keycode == '13') {
+//			var hymnNum = $(this).val();
+//			retrieveHymn(hymnNum);
+//		}
+//
+//	});
+//
+//	$('#search-click').click(function(event) {
+//		var hymnNum = $('#search-keypress').val();
+//		retrieveHymn(hymnNum);
+//	});	
 });
