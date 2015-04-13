@@ -80,6 +80,7 @@ $(document).ready(function() {
 
 			$('.week').on("click", function event() {
 				unselectHymn();
+				alert("this is: "+$(this).text());
 				retrieveWeek($(this).text());
 			});
 	});
