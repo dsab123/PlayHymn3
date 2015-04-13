@@ -58,15 +58,9 @@ $(document).ready(function() {
 		});
 	}
 
-	//$.when( $.ajax("https://"+window.location.host+"/week/all") ).then(function event() {
 	$('.dropdown-poop').on('click', '.week', function() {	
-		alert("this is: "+$(this).text());
-	
-		//$('.week').on("click", function event() {
 			unselectHymn();
-			alert("this is: "+$(this).text());
 			retrieveWeek($(this).text());
-		//});
 	});
 	
 
@@ -79,9 +73,6 @@ $(document).ready(function() {
 		retrieveHymn($(this).first().text());
 
 		if ($(this).is(whichActive)) {
-//			$('.hymn-div').fadeOut("fast");
-//			$('.hymn-lyrics').fadeOut("fast");
-//			$(this).removeClass("active");
 			unselectHymn();
 		} else {
 			$('.hymn-div').fadeIn("fast");
@@ -94,19 +85,4 @@ $(document).ready(function() {
 		$('.hymn-div').fadeOut("fast");
 		$('.hymn-lyrics').fadeOut("fast");
 	}
-	
-	
-//	$('#search-keypress').keypress(function(event) {
-//		var keycode = (event.keyCode ? event.keyCode : event.which);
-//		if (keycode == '13') {
-//			var hymnNum = $(this).val();
-//			retrieveHymn(hymnNum);
-//		}
-//
-//	});
-//
-//	$('#search-click').click(function(event) {
-//		var hymnNum = $('#search-keypress').val();
-//		retrieveHymn(hymnNum);
-//	});	
 });
