@@ -77,6 +77,7 @@ $(document).ready(function() {
 	}
 
 	$.when( $.ajax("http://"+window.location.host+"/week/all") ).then(function event() {
+				alert("this is: "+$(this).text());
 
 			$('.week').on("click", function event() {
 				unselectHymn();
