@@ -31,12 +31,14 @@ Navigate to http://localhost:9000
 Fill this in later.
 
 ### Todo
-- deploy on heroku
+- come up with better name
+- add better description
+- ~~deploy on heroku~~
 - fix popState in jQuery
 - ~~learn JPA or Hibernate or something else to tie hymn database~~
 - ~~query aforementioned db for hymn~~
 - ~~add audio to db~~
-- switch db to postgres for easy use with heroku
+- ~~switch db to postgres for easy use with heroku~~
 - ~~add <audio> to html~~
 - add unit tests!!!
 - ~~reformat html for pagination, identified by week rather than hymn~~
