@@ -1,6 +1,7 @@
-$(document).ready(function() {	
+$(document).ready(function() {
+
 	$.ajax({
-		url: "http://localhost:8080/week/all"
+		url: "https://"+window.location.host+"/week/all"
 	}).then(function(data, status, jqkhr) {
 
 		$(data).each(function(index, value) {
@@ -11,22 +12,8 @@ $(document).ready(function() {
 		})
 	});
 
-	$('#search-keypress').keypress(function(event) {
-		var keycode = (event.keyCode ? event.keyCode : event.which);
-		if (keycode == '13') {
-			var hymnNum = $(this).val();
-			retrieveHymn(hymnNum);
-		}
-
-	});
-
-	$('#search-click').click(function(event) {
-		var hymnNum = $('#search-keypress').val();
-		retrieveHymn(hymnNum);
-	});
-
 	function retrieveHymn(hymn) {
-		var newURI = "http://localhost:8080/hymn/"+hymn
+		var newURI = "https://"+window.location.host+"/hymn/"+hymn
 
 		// for when I get pushState-like functionality working
 		// get current url, and append the hymn to it
@@ -55,11 +42,11 @@ $(document).ready(function() {
 	function retrieveWeek(week) {
 		$('#progress').text("loading...");
 
-		var newURI = "http://localhost:8080/week/"+week
+		var newURI = "https://"+window.location.host+"/week/"+week
 		$('#progress').text("loading "+week);
 
 		// for when I get pushState-like functionality working
-		history.pushState({}, '', week)
+		//history.pushState({}, '', week)
 
 		$.ajax({
 			url: newURI
@@ -71,13 +58,11 @@ $(document).ready(function() {
 		});
 	}
 
-	$.when( $.ajax("http://localhost:8080/week/all") ).then(function event() {
-
-			$('.week').on("click", function event() {
-				unselectHymn();
-				retrieveWeek($(this).text());
-			});
+	$('.dropdown-poop').on('click', '.week', function() {	
+			unselectHymn();
+			retrieveWeek($(this).text());
 	});
+	
 
 	$('[class^="list"]').on("click", function() {
 		var whichActive = $(this).parent().find(".active");
@@ -88,9 +73,6 @@ $(document).ready(function() {
 		retrieveHymn($(this).first().text());
 
 		if ($(this).is(whichActive)) {
-//			$('.hymn-div').fadeOut("fast");
-//			$('.hymn-lyrics').fadeOut("fast");
-//			$(this).removeClass("active");
 			unselectHymn();
 		} else {
 			$('.hymn-div').fadeIn("fast");
