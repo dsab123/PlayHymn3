@@ -2,8 +2,9 @@
 <html>
 <head>
 <title>PlayHymns</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1.12.min.js"></script>
+
 <script src="hello.js"></script>
 
 <link rel="stylesheet"
@@ -19,7 +20,7 @@
 		<div class="span12">
 			<div class="jumbotron">
 				<h1>PlayHymns!</h1>
-				<p>Use the search bar below to get started.</p>
+				<p>Choose which Sunday's hymns you'd like to view.</p>
 			</div>
 		</div>
 
@@ -43,8 +44,7 @@
 				Select Week <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-				<li class="dropdown-poop" role="presentation">
-				</li>
+				<li class="dropdown-poop" role="presentation"></li>
 			</ul>
 		</div>
 
@@ -65,7 +65,9 @@
 					<p class="hymn-name"></p>
 					<p class="hymn-number"></p>
 					<audio id="audioStuff" controls>
-						<source src="" class="hymn-uri-mp3" type="audio/mp3">
+						<source
+							src=""
+							class="hymn-uri-mp3" type="audio/mp3">
 						<source src="" class="hymn-uri-ogg" type="audio/ogg">
 					</audio>
 				</div>
