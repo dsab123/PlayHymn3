@@ -5,7 +5,7 @@ $(document).ready(function() {
 	}).then(function(data, status, jqkhr) {
 
 		$(data).each(function(index, value) {
-			$('.dropdown-poop').append(
+			$('#dropdown-list').append(
 					"<a role=\"menuitem\" tabindex=\"" + index + "\" class=\"week\" href=\"#\">" + 
 					value.date + "</a>"
 			);	
@@ -22,15 +22,15 @@ $(document).ready(function() {
 		$.ajax({
 			url: newURI
 		}).then(function(data, status, jqxhr) {
-			$('.hymn-name').text(data.name);
-			$('.hymn-lyrics').text(data.lyrics);
-			$('.hymn-number').text(data.number);
+			$('#hymn-name').text(data.name);
+			$('#hymn-lyrics').text(data.lyrics);
+			$('#hymn-number').text(data.number);
 
-			$('.hymn-uri-mp3').attr("src", data.mp3Uri);
-			$('.hymn-uri-ogg').attr("src", data.oggUri);			
+			$('#hymn-uri-mp3').attr("src", data.mp3Uri);
+			$('#hymn-uri-ogg').attr("src", data.oggUri);			
 
 			// chalk not finding this out to my lack of html/js experience
-			var audio = $("#audioStuff");
+			var audio = $("#audioBar");
 			audio.load();
 		});		
 	}
@@ -52,13 +52,13 @@ $(document).ready(function() {
 			url: newURI
 		}).then(function(data, status, jqxhr) {
 			$('.week').text(data.week);
-			$('.hymn1-text').text(data.hymn1);
-			$('.hymn2-text').text(data.hymn2);
-			$('.hymn3-text').text(data.hymn3);
+			$('#hymn1-text').text(data.hymn1);
+			$('#hymn2-text').text(data.hymn2);
+			$('#hymn3-text').text(data.hymn3);
 		});
 	}
 
-	$('.dropdown-poop').on('click', '.week', function() {	
+	$('#dropdown-list').on('click', '.week', function() {	
 			unselectHymn();
 			retrieveWeek($(this).text());
 	});

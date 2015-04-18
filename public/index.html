@@ -16,27 +16,15 @@
 <body>
 
 	<div class="container">
-
 		<div class="span12">
 			<div class="jumbotron">
 				<h1>PlayHymns!</h1>
 				<p>Choose which Sunday's hymns you'd like to view.</p>
+				<div class="col-sm-12 text-right">
+					<a href="https://github.com/dsab123/PlayHymn3"><img src="github-icon.png"></a>
+				</div>	
 			</div>
 		</div>
-
-		<!-- 
-		<div class="col-lg-6">
-			<div class="input-group">
-				<input id="search-keypress" type="text" class="form-control"
-					placeholder="Search for..."> <span class="input-group-btn">
-					<button id="search-click" class="btn btn-default" type="button">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
-				</span>
-			</div>
-		</div>
-		-->
-
 
 		<div class="dropdown">
 			<button class="btn btn-default dropdown-toggle" type="button"
@@ -44,7 +32,7 @@
 				Select Week <span class="caret"></span>
 			</button>
 			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-				<li class="dropdown-poop" role="presentation"></li>
+				<li id="dropdown-list" role="presentation"></li>
 			</ul>
 		</div>
 
@@ -52,30 +40,28 @@
 			<div class="col-sm-2">
 				<ul class="nav nav-pills nav-stacked">
 					<li role="presentation" class="list-hymn1"><a
-						class="hymn1-text" href="#">Hymn 1</a></li>
+						id="hymn1-text" href="#">Hymn 1</a></li>
 					<li role="presentation" class="list-hymn2"><a
-						class="hymn2-text" href="#">Hymn 2</a></li>
+						id="hymn2-text" href="#">Hymn 2</a></li>
 					<li role="presentation" class="list-hymn3"><a
-						class="hymn3-text" href="#">Hymn 3</a></li>
+						id="hymn3-text" href="#">Hymn 3</a></li>
 				</ul>
 			</div>
 
 			<div class="col-sm-4">
-				<div class="hymn-div" style="display: none;">
-					<p class="hymn-name"></p>
-					<p class="hymn-number"></p>
-					<audio id="audioStuff" controls>
-						<source
-							src=""
-							class="hymn-uri-mp3" type="audio/mp3">
-						<source src="" class="hymn-uri-ogg" type="audio/ogg">
+				<div id="hymn-div" style="display: none;">
+					<p id="hymn-name"></p>
+					<p id="hymn-number"></p>
+					<audio id="audioBar" controls>
+						<source src="" id="hymn-uri-mp3" type="audio/mp3">
+						<source src="" id="hymn-uri-ogg" type="audio/ogg">
 					</audio>
 				</div>
 			</div>
 
 			<div class="col-sm-4">
 				<div class="lyrics-div">
-					<p class="hymn-lyrics" style="display: none;"></p>
+					<p id="hymn-lyrics" style="display: none;"></p>
 				</div>
 			</div>
 		</div>
