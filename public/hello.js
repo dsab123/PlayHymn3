@@ -26,7 +26,7 @@ $(document).ready(function() {
 			$('#hymn-number').text(data.number);
 
 			$('#hymn-lyrics').load(data.lyrics);
-			$('#hymn-lyrics').val().replace("\n", "<br />", "g");
+			$('#hymn-lyrics').val().replace("\n", "<br>", "g");
 			
 			$('#hymn-uri-mp3').attr("src", data.mp3Uri);
 			$('#hymn-uri-ogg').attr("src", data.oggUri);			
