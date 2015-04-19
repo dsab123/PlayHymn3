@@ -55,8 +55,8 @@ public class PlayHymnsTest {
 		WebElement week = waitForWeek.until(ExpectedConditions.elementToBeClickable(By.className("week")));
 		week.click();
 		
-		WebDriverWait waitForHymn = new WebDriverWait(driver, 1);
-		WebElement hymn = waitForWeek.until(ExpectedConditions.elementToBeClickable(By.className("hymn1-text")));
+//		WebDriverWait waitForHymn = new WebDriverWait(driver, 10);
+//		WebElement hymn = waitForWeek.until(ExpectedConditions.elementToBeClickable(By.className("hymn1-text")));
 	}
 	
 }

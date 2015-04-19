@@ -75,14 +75,14 @@ $(document).ready(function() {
 		if ($(this).is(whichActive)) {
 			unselectHymn();
 		} else {
-			$('.hymn-div').fadeIn("fast");
-			$('.hymn-lyrics').fadeIn("fast");
+			$('#hymn-div').fadeIn("fast");
+			$('#hymn-lyrics').fadeIn("fast");
 		}
 	})
 	
 	function unselectHymn() {
 		$('.active').removeClass('active');
-		$('.hymn-div').fadeOut("fast");
-		$('.hymn-lyrics').fadeOut("fast");
+		$('#hymn-div').fadeOut("fast");
+		$('#hymn-lyrics').fadeOut("fast");
 	}
 });
