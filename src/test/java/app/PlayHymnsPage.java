@@ -10,10 +10,10 @@ public class PlayHymnsPage {
 	
 	By dropdownLocator = By.className("dropdown-toggle");
 	By weekLocator = By.className("week");
-	By hymn1TextLocator = By.className("hymn1-text");
-	By hymn2TextLocator = By.className("hymn2-text");
-	By hymn3TextLocator = By.className("hymn3-text");
-	By audioBarLocator = By.className("audioBar");
+	By hymn1TextLocator = By.id("hymn1-text");
+	By hymn2TextLocator = By.id("hymn2-text");
+	By hymn3TextLocator = By.id("hymn3-text");
+	By audioBarLocator = By.id("audioBar");
 	
 	public PlayHymnsPage(WebDriver driverIn) {
 		driver = driverIn;
