@@ -23,9 +23,11 @@ $(document).ready(function() {
 			url: newURI
 		}).then(function(data, status, jqxhr) {
 			$('#hymn-name').text(data.name);
-			$('#hymn-lyrics').load(data.lyrics);
 			$('#hymn-number').text(data.number);
 
+			$('#hymn-lyrics').load(data.lyrics);
+			$('#hymn-lyrics').replace(/\n/g,"<br>");
+			
 			$('#hymn-uri-mp3').attr("src", data.mp3Uri);
 			$('#hymn-uri-ogg').attr("src", data.oggUri);			
 
