@@ -11,7 +11,7 @@ I attend Trinity Reformed Church of Gaithersburg, a new church plant in Maryland
 
 Our church utilizes the rich tradition of worshipping the Lord with hymns, older-style songs with rich theology.
 
-Many of us, however, were not exposed to these hymns earlier, and it has been a struggle for us to collectively join together in song every Sunday.
+Many of us, however, have not been sufficiently exposed to the style and nature of hymns, and it has been a struggle for us to collectively join together in song every Sunday.
 
 As the church pianist, I am responsible for learning the songs and leading the worship.
 
@@ -20,44 +20,49 @@ I decided that it would be beneficial for our church to have a resource with whi
 This project is the manifestation of that desire.
 
 ### Usage
-build using maven, then
+build using maven
 
 ```
-java -jar target/PlayHymn3-0.1.0.jar
+mvn package
+```
+
+to run,
+
+```
+java -jar -Dserver.port=9000 target/PlayHymn3-0.1.0.jar
 ```
 
 Navigate to http://localhost:9000
 
 ### About
-Disclaimer: I'm just getting my feet wet with Spring and jQuery, and this is my first web projects.
+Disclaimer: I'm just getting my feet wet with Spring and jQuery, and this is my first web project.
 
-There's a Spring Boot example that shows how to build a RESTful resource (https://spring.io/guides/gs/actuator-service/) that is pretty straightforward. It accepts GET requests and returns a JSON object.
+There's a Spring Boot example that [shows how to build a RESTful resource](https://spring.io/guides/gs/actuator-service/) that is pretty straightforward. It accepts GET requests and returns a JSON object.
 
-There's also another one that shows how to host static content (https://spring.io/blog/2013/12/19/serving-static-web-content-with-spring-boot).
+There's also another one that shows [how to host static content](https://spring.io/blog/2013/12/19/serving-static-web-content-with-spring-boot).
 
 I figured it would be easy to bind the two examples together, throw in an SQL database for the backend to serve responses from, deploy on heroku, and voila!
 
-However, I've kind of hit a brick wall.
+I wasn't sure how to get heroku to allow me to use CORS. I am given a port to bind to from heroku's config vars, but I don't know how to reach the other end.
 
-I'm not sure how to get heroku to allow me to use CORS. I am given a port to bind to from heroku's config vars, but I don't know how to reach the other end.
-
-For the sake of finishing the project, I'll just bind the port to the backend, and navigating to <name>.herokuapp.com/index.html will expose the frontend.
+For the sake of finishing the project, I just bound the port to the backend.
 
 Next try will involve a more mature framework like Ruby On Rails, possibly.
 
 
 ### Todo
 - come up with better name
-- add better description
+- can users submit feedback that can be easily submitted as a Git issue?
+- ~~add better description~~
 - ~~deploy on heroku~~
-- host files on s3
-- fix popState in jQuery
+- ~~host files on s3~~
+- fix popState in jQuery (to make it REALLY RESTful)
 - ~~learn JPA or Hibernate or something else to tie hymn database~~
 - ~~query aforementioned db for hymn~~
 - ~~add audio to db~~
 - ~~switch db to postgres for easy use with heroku~~
 - ~~add <audio> to html~~
-- add unit tests!!!
+- ~~add unit tests!!!~~
 - ~~reformat html for pagination, identified by week rather than hymn~~
 - handle null cases
 - ~~add links to previous week's hymns~~

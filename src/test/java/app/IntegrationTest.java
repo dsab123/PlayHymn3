@@ -20,7 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class PlayHymnsTest {
+public class IntegrationTest {
 
 	WebDriver driver;
 	String siteName = "https://mysterious-mesa-5118.herokuapp.com"; 
