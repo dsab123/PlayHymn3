@@ -7,9 +7,9 @@
 - 3/25/2015 Added second http connector to Tomcat to serve the html, so no more running two Tomcat instances! ^__^
 
 ### History
-I attend Trinity Reformed Church of Gaithersburg, a new church plant in Maryland (www.trcofg.org).
+I attend Trinity Reformed Church of Gaithersburg, an [awesome new church plant in Maryland](www.trcofg.org).
 
-Our church utilizes the rich tradition of worshipping the Lord with hymns, older-style songs with rich theology.
+Our church utilizes the tradition of worshipping the Lord with hymns, older-style songs with rich theology.
 
 Many of us, however, have not been sufficiently exposed to the style and nature of hymns, and it has been a struggle for us to collectively join together in song every Sunday.
 
@@ -64,7 +64,7 @@ Next try will involve a more mature framework like Ruby On Rails, possibly.
 - ~~add <audio> to html~~
 - ~~add unit tests!!!~~
 - ~~reformat html for pagination, identified by week rather than hymn~~
-- handle null cases
+- handle null cases and build proper http headers
 - ~~add links to previous week's hymns~~
 - ~~how to run this on heroku~~
 
