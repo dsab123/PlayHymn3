@@ -8,22 +8,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerFactory;
 import org.springframework.boot.context.embedded.tomcat.TomcatEmbeddedServletContainerFactory;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Profile;
 
 @SpringBootApplication
 public class Application {
 
 //	@Bean
+//	@Profile("test")
 //	public EmbeddedServletContainerFactory servletContainer() {
 //		TomcatEmbeddedServletContainerFactory tomcat = new TomcatEmbeddedServletContainerFactory();
 //		tomcat.addAdditionalTomcatConnectors(createHTTPConnector());
 //		return tomcat;
 //	}
 //
+//	@Profile("test")
 //	private Connector createHTTPConnector() {
 //		Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
 //		connector.setScheme("http");
 //		//connector.setPort(Integer.parseInt(System.getenv("PORT")));
-//		//connector.setPort(9000);
+//		connector.setPort(8080);
 //		return connector;
 //	}
 	
