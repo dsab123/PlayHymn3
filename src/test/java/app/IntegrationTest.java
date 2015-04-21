@@ -23,7 +23,8 @@ import org.openqa.selenium.WebElement;
 public class IntegrationTest {
 
 	WebDriver driver;
-	String siteName = "https://mysterious-mesa-5118.herokuapp.com"; 
+	String siteName = "https://playhymns.herokuapp.com";
+	//String siteName = "https://localhost:9000";
 	String siteTitle = "PlayHymns";
 	PlayHymnsPage playHymnsPage;
 	
@@ -37,7 +38,7 @@ public class IntegrationTest {
 	
 	@After
 	public void tearDown() {
-		driver.close();
+		driver.quit();
 	}
 	
 	@Test
@@ -49,14 +50,25 @@ public class IntegrationTest {
 	public void selectWeek_verifyWeekAndHymnListingsAppear() {
 		playHymnsPage.clickOnDropdown();
 		
+		playHymnsPage.selectFirstWeek();
+		
+		playHymnsPage.selectHymn1();
 		
 		// how to replace this with playHymnsPage.clickOnWeek()?
-		WebDriverWait waitForWeek = new WebDriverWait(driver, 1);		
-		WebElement week = waitForWeek.until(ExpectedConditions.elementToBeClickable(By.className("week")));
+		WebDriverWait wait = new WebDriverWait(driver, 1);		
+		
+		WebElement week = wait.until(ExpectedConditions.elementToBeClickable(playHymnsPage.weekLocator));
 		week.click();
 		
-		WebDriverWait waitForHymn = new WebDriverWait(driver, 1);
-		WebElement hymn = waitForWeek.until(ExpectedConditions.elementToBeClickable(By.id("hymn1-text")));
+		WebElement hymn = wait.until(ExpectedConditions.elementToBeClickable(playHymnsPage.hymn1TextLocator));
+		hymn.click();
+	}
+	
+	@Test
+	public void selectGithubIcon_verifyLink() {
+		playHymnsPage.clickOnGithubIcon();
+		
+		
 	}
 	
 }

@@ -14,6 +14,7 @@ public class PlayHymnsPage {
 	By hymn2TextLocator = By.id("hymn2-text");
 	By hymn3TextLocator = By.id("hymn3-text");
 	By audioBarLocator = By.id("audioBar");
+	By githubIconLocator = By.id("github-icon");
 	
 	public PlayHymnsPage(WebDriver driverIn) {
 		driver = driverIn;
@@ -28,7 +29,7 @@ public class PlayHymnsPage {
 		return this;
 	}
 	
-	public PlayHymnsPage selectWeek() {
+	public PlayHymnsPage selectFirstWeek() {
 		driver.findElement(weekLocator).click();
 		return this;
 	}
@@ -45,6 +46,11 @@ public class PlayHymnsPage {
 	
 	public PlayHymnsPage selectHymn3() {
 		driver.findElement(hymn3TextLocator).click();
+		return this;
+	}
+	
+	public PlayHymnsPage clickOnGithubIcon() {
+		driver.findElement(githubIconLocator).click();
 		return this;
 	}
 }
