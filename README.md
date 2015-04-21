@@ -41,16 +41,18 @@ There's a Spring Boot example that [shows how to build a RESTful resource](https
 
 There's also another one that shows [how to host static content](https://spring.io/blog/2013/12/19/serving-static-web-content-with-spring-boot).
 
-I figured it would be easy to bind the two examples together, throw in an SQL database for the backend to serve responses from, deploy on heroku, and voila!
+I figured it would be easy to bind the two examples together, throw in an SQL database for the back end to serve responses from, deploy on heroku, and voila!
 
 I wasn't sure how to get heroku to allow me to use CORS. I am given a port to bind to from heroku's config vars, but I don't know how to reach the other end.
 
-For the sake of finishing the project, I just bound the port to the backend.
+For the sake of finishing the project, I just bound the port to the back end. Unfortunately, only the back end will be RESTful; the front end will just be regular and plain-looking :/
 
 Next try will involve a more mature framework like Ruby On Rails, possibly.
 
 
 ### Todo
+- Does GWT use CORS?
+- setup spring "test" profile so that testing done with mock SQL server with CORS
 - come up with better name
 - can users submit feedback that can be easily submitted as a Git issue?
 - ~~add better description~~
