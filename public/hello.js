@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	$.ajax({
-		url: "https://"+window.location.host+"/week/all"
+		url: "http://"+window.location.host+"/week/all"
 	}).then(function(data, status, jqkhr) {
 
 		$(data).each(function(index, value) {
@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 
 	function retrieveHymn(hymn) {
-		var newURI = "https://"+window.location.host+"/hymn/"+hymn
+		var newURI = "http://"+window.location.host+"/hymn/"+hymn
 
 		// for when I get pushState-like functionality working
 		// get current url, and append the hymn to it
@@ -31,7 +31,8 @@ $(document).ready(function() {
 			$('#hymn-uri-mp3').attr("src", data.mp3Uri);
 			$('#hymn-uri-ogg').attr("src", data.oggUri);			
 
-			// chalk not finding this out to my lack of html/js experience
+			// have to load the audio...
+			//chalk not finding this out to my lack of html/js experience
 			var audio = $("#audioBar");
 			audio.load();
 		});		
@@ -44,7 +45,7 @@ $(document).ready(function() {
 	function retrieveWeek(week) {
 		$('#progress').text("loading...");
 
-		var newURI = "https://"+window.location.host+"/week/"+week
+		var newURI = "http://"+window.location.host+"/week/"+week
 		$('#progress').text("loading "+week);
 
 		// for when I get pushState-like functionality working
