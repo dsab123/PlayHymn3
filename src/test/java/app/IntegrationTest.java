@@ -23,8 +23,8 @@ import org.openqa.selenium.WebElement;
 public class IntegrationTest {
 
 	WebDriver driver;
-	String siteName = "https://playhymns.herokuapp.com";
-	//String siteName = "https://localhost:9000";
+	//String siteName = "https://playhymns.herokuapp.com";
+	String siteName = "http://localhost:5000";
 	String siteTitle = "PlayHymns";
 	PlayHymnsPage playHymnsPage;
 	
@@ -54,14 +54,7 @@ public class IntegrationTest {
 		
 		playHymnsPage.selectHymn1();
 		
-		// how to replace this with playHymnsPage.clickOnWeek()?
-		WebDriverWait wait = new WebDriverWait(driver, 1);		
 		
-		WebElement week = wait.until(ExpectedConditions.elementToBeClickable(playHymnsPage.weekLocator));
-		week.click();
-		
-		WebElement hymn = wait.until(ExpectedConditions.elementToBeClickable(playHymnsPage.hymn1TextLocator));
-		hymn.click();
 	}
 	
 	@Test
