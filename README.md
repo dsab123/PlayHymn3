@@ -2,6 +2,7 @@
 ## A (very) simple service to stream hymns played by me
 
 ### Changelog
+- 10/22/2015 I have a blog now, where I'm blogging through the pieces of this project. [Go there!](www.danielsabbagh.com)
 - 4/12/2015 finally got something through the pipeline!
 - 3/25/2015 Added simple bootstrap to index.html
 - 3/25/2015 Added second http connector to Tomcat to serve the html, so no more running two Tomcat instances! ^__^
