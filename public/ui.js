@@ -5,10 +5,14 @@ $(document).ready(function() {
 	}).then(function(data, status, jqkhr) {
 
 		$(data).each(function(index, value) {
-			$('#dropdown-list').append(
-					"<a role=\"menuitem\" tabindex=\"" + index + "\" class=\"week\" href=\"#\">" + 
-					value.date + "</a>"
-			);	
+			// in order to reference the index from inside value
+			value.index = index;			
+			
+			$.get('templates.html', function(data) {
+				var template = $(data).filter("#week_snippet").html();
+				var html = Mustache.render(template, value);
+				$('#dropdown-list').append(html);				
+			});
 		})
 	});
 
@@ -31,8 +35,6 @@ $(document).ready(function() {
 			$('#hymn-uri-mp3').attr("src", data.mp3Uri);
 			$('#hymn-uri-ogg').attr("src", data.oggUri);			
 
-			// have to load the audio...
-			//chalk not finding this out to my lack of html/js experience
 			var audio = $("#audioBar");
 			audio.load();
 		});		
@@ -61,13 +63,16 @@ $(document).ready(function() {
 		});
 	}
 
-	$('#dropdown-list').on('click', '.week', function() {	
+	$('#dropdown-list').on('click', '.week', function(event) {
 			unselectHymn();
 			retrieveWeek($(this).text());
 	});
 	
 
-	$('[class^="list"]').on("click", function() {
+	$('[class^="list"]').on("click", function(event) {
+		event.preventDefault();
+		event.stopPropagation();
+		
 		var whichActive = $(this).parent().find(".active");
 
 		$(this).parent().find(".active").removeClass("active");
