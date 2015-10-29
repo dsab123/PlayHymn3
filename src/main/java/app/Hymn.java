@@ -55,10 +55,6 @@ public class Hymn {
 		return mp3Uri;
 	}
 	
-	public String getOggUri() {
-		return oggUri;
-	}
-	
 	@Override
 	public String toString() {
 		return number + " | " + name + " | " + lyrics;
