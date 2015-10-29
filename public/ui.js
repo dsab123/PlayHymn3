@@ -64,8 +64,17 @@ $(document).ready(function() {
 	}
 
 	$('#dropdown-list').on('click', '.week', function(event) {
-			unselectHymn();
-			retrieveWeek($(this).text());
+		var week = $(this).text();	
+		unselectHymn();
+		retrieveWeek(week);
+			
+		// going overboard with the templating, am I?
+		$.get('templates.html', function(data) {
+			var template = $(data).filter("#week_heading").html();
+			console.log(week);
+			var html = Mustache.render(template, week);
+			$('#dropdownMenu1').html(html);
+		});			
 	});
 	
 
